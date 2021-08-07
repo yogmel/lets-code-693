@@ -1,0 +1,9 @@
+.input {
+  height: 30px;
+  padding: 0px 7px;
+  margin: 0 20px;
+}
+
+.input_erro {
+  border: 2px solid red;
+}

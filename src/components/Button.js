@@ -3,10 +3,10 @@ import './Button.css';
 // type: "primary" | "secondary"
 
 function Button(props) {
-  const { type, text } = props;
+  const { type, texto, onClick } = props;
 
   return (
-    <button className={`btn btn-${type}`}>{text}</button>
+    <button className={`btn btn-${type}`} onClick={onClick}>{texto}</button>
   )
 }
 
