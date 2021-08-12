@@ -1,0 +1,28 @@
+.exercio-quatro {
+  display: flex;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 10px 30px;
+  margin: 0 20px;
+}
+
+.card.destaque {
+  background-color: red;
+}
+
+.card__temperatura {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.destaque__btn {
+  background-color: #82d173;
+  border: none;
+  padding: 10px 30px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}

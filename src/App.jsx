@@ -1,12 +1,12 @@
 import "./App.css";
-import ExercicioTres from "./ExercicioTres/ExercicioTres";
+import ExercicioQuatro from "./ExercicioQuatro/ExercicioQuatro";
 
 // JSX: Javascript XML
 
 function App() {
   return (
     <div className="App">
-      <ExercicioTres />
+      <ExercicioQuatro />
     </div>
   );
 }
