@@ -1,18 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 
 function Card(props) {
-  const {
-    data,
-    icone,
-    temperatura: { max, min },
-  } = props;
+  const { dado, reset } = props;
 
-  const [destaque, setDestaque] = useState(false);
+  const {
+    id,
+    data,
+    destaque,
+    icone,
+    temperatura: { min, max },
+  } = dado;
 
   const alternarDestaque = () => {
-    setDestaque(!destaque);
+    reset(id);
   };
 
   return (
