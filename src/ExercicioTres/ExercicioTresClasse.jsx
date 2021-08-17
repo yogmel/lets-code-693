@@ -4,6 +4,8 @@ import { Button } from "./../components";
 class ExercicioTresClasse extends Component {
   constructor() {
     super();
+    console.log("Constructor");
+
     this.state = {
       min: null,
       max: null,
@@ -40,7 +42,21 @@ class ExercicioTresClasse extends Component {
     }
   };
 
+  componentDidMount() {
+    console.log("Componente montado");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Componente atualizado");
+  }
+
+  componentWillUnmount() {
+    console.log("Componente desmontado");
+  }
+
   render() {
+    console.log("Render");
+
     const { erro, numAleatorio } = this.state;
     return (
       <>
@@ -70,3 +86,26 @@ class ExercicioTresClasse extends Component {
 }
 
 export default ExercicioTresClasse;
+
+class Pessoa {
+  constructor(nome, idade) {}
+
+  render() {}
+
+  superSaudacao() {
+    return this.saudacao;
+  }
+}
+
+class Profissional extends Pessoa {
+  constructor(nome, idade, profissao) {
+    super();
+  }
+
+  render() {
+    console.log("profissional");
+  }
+}
+
+const jessica = new Profissional("asdad", 223, "casdasd");
+jessica.saudacao();

@@ -1,7 +1,7 @@
 import "./ExercicioQuatro.css";
 import Card from "./components/Card";
 import { previsao } from "./data/previsao";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 /*
  * Exercicio para casa dia 13/08
@@ -10,22 +10,45 @@ import { useState } from "react";
  */
 
 function ExercicioQuatro() {
-  const [dados, setDados] = useState(previsao);
+  const [dado, setDado] = useState({});
+
+  const fetchData = () => {
+    fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=araraquara&appid=35d2abda2c6b48e0b3be5a232b5f0033&units=metric"
+    )
+      .then((data) => data.json())
+      .then((response) => {
+        const obj = {
+          cidade: response.name,
+          clima: response.weather[0].main,
+          temperatura: {
+            min: response.main.temp_min,
+            max: response.main.temp_max,
+          },
+        };
+        setDado(obj);
+      });
+  };
+
+  useEffect(() => {
+    console.log("montado");
+    fetchData();
+  }, []);
 
   const reset = (id) => {
-    const novosDados = dados.map((dado) => ({
-      ...dado,
-      destaque: id === dado.id,
-    }));
+    // const novosDados = dados.map((dado) => ({
+    //   ...dado,
+    //   destaque: id === dado.id,
+    // }));
 
-    setDados(novosDados);
+    setDado({});
   };
 
   return (
     <div className="exercio-quatro">
-      {dados.map((dado) => (
-        <Card dado={dado} reset={reset} />
-      ))}
+      {/* {dados.map((dado) => ( */}
+      <Card dado={dado} reset={reset} />
+      {/* ))} */}
     </div>
   );
 }

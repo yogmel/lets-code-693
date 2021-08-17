@@ -1,11 +1,26 @@
 import { Button } from "./../components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function ExercicioTres() {
   const [min, setMin] = useState(null);
   const [max, setMax] = useState(null);
   const [numAleatorio, setNumAleatorio] = useState(null);
   const [erro, setErro] = useState("");
+
+  useEffect(() => {
+    console.log("Funcional: Componente montado");
+    return () => {
+      console.log("Funcional: Componente desmontado");
+    };
+  }, []); // componentDidMount e componentWillUnmount
+
+  useEffect(() => {
+    console.log("Funcional: Componente atualizado, min", min, numAleatorio);
+  }, [min, numAleatorio]); // componentDidUpdate, somente quando min mudar
+
+  useEffect(() => {
+    console.log("Funcional: Componente atualizado");
+  }); // componentDidUpdate, toda vez
 
   const atualizarMin = (evento) => {
     setMin(parseInt(evento.target.value));
