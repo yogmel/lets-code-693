@@ -1,11 +1,32 @@
 import { Button } from "../components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ExercicioUm.css";
 
 function ExercicioUm() {
   const [citacao, setCitacao] = useState("");
   const [editandoCitacao, setEditingCitacao] = useState("");
   const [erro, setErro] = useState(false);
+
+  const fetchFakeData = () => {
+    const promise = new Promise((resolve, reject) => {
+      resolve("SUCESSO!");
+    });
+
+    promise
+      .then((resposta) => {
+        console.log("OIE", resposta);
+        return 3;
+      })
+      .then((response) => console.log("OIE 2", response))
+      .catch((err) => {
+        throw new Error(err);
+      });
+  };
+
+  useEffect(() => {
+    console.log("Componente montado");
+    fetchFakeData();
+  }, []);
 
   const handleInputChange = (evento) => {
     setErro(false);

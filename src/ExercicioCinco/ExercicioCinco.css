@@ -1,0 +1,19 @@
+.exercicio-cinco {
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  justify-content: space-evenly;
+}
+
+.mensagens-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.mensagens-input > button {
+  margin-top: 10px;
+}
+
+.mensagens-container {
+  border: 1px solid black;
+}
