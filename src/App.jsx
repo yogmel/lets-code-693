@@ -1,12 +1,12 @@
 import "./App.css";
-import ExercicioUm from "./ExercicioUm/ExercicioUm";
+import Pokedex from "./Pokedex/Pokedex";
 
 // JSX: Javascript XML
 
 function App() {
   return (
     <div className="App">
-      <ExercicioUm />
+      <Pokedex />
     </div>
   );
 }
