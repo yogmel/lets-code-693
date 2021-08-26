@@ -1,0 +1,35 @@
+.wrapper {
+  width: 100%;
+}
+
+.navigation-menu {
+  height: 42px;
+  background: #234567;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: transform .1s;
+}
+
+.link:hover {
+  transform: scale(1.15);
+}
+
+.selected-link {
+  text-decoration: underline;
+}
+
+.routes {
+  min-height: calc(100vh - 42px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
