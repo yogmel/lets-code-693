@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Pokecard.css";
-import { useState } from "react";
 
 function Pokecard(props) {
   const { url } = props;

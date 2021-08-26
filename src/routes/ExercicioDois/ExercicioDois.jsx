@@ -1,11 +1,10 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 function ExercicioDois() {
-  const [nome, setNome] = useState("");
-  const [cpf, setCpf] = useState("");
-
-  // const [dadosUsuario, setDadosUsuario] = useState({ nome: "", cpf: ""});
-  // const [editandoDadosUsuario, setEditandoDadosUsuario] = useState({ nome: "", cpf: ""});
+  const { nomeInicial, cpfInicial } = useParams()
+  const [nome, setNome] = useState(nomeInicial);
+  const [cpf, setCpf] = useState(cpfInicial);
 
   let editandoNome = "";
   let editandoCpf = "";

@@ -1,9 +1,18 @@
-import { Button } from "./../components";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import { Button } from "../../components";
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 function ExercicioTres() {
-  const [min, setMin] = useState(null);
-  const [max, setMax] = useState(null);
+  const query = useQuery();
+  const minInicial = parseInt(query.get("minInicial"))
+  const maxInicial = parseInt(query.get("maxInicial"))
+
+  const [min, setMin] = useState(minInicial);
+  const [max, setMax] = useState(maxInicial);
   const [numAleatorio, setNumAleatorio] = useState(null);
   const [erro, setErro] = useState("");
 
@@ -50,9 +59,9 @@ function ExercicioTres() {
       <h1>Sorteie um número</h1>
       <section>
         <span>de</span>
-        <input type="number" name="min" onChange={atualizarMin} />
+        <input type="number" name="min" value={min} onChange={atualizarMin} />
         <span>para</span>
-        <input type="number" name="max" onChange={atualizarMax} />
+        <input type="number" name="max" value={max} onChange={atualizarMax} />
         <Button
           type="primary"
           texto="Gerar sorte"
