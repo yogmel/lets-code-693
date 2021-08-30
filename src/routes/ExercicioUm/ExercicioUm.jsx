@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { Button } from "../../components";
 import "./ExercicioUm.css";
+import { useParams } from "react-router-dom";
 
 function ExercicioUm() {
   const [citacao, setCitacao] = useState("");
   const [editandoCitacao, setEditingCitacao] = useState("");
   const [erro, setErro] = useState(false);
+
+  const params = useParams();
+  console.log("params", params);
 
   const fetchFakeData = () => {
     const promise = new Promise((resolve, reject) => {
@@ -14,17 +18,15 @@ function ExercicioUm() {
 
     promise
       .then((resposta) => {
-        console.log("OIE", resposta);
         return 3;
       })
-      .then((response) => console.log("OIE 2", response))
+      .then((response) => {})
       .catch((err) => {
         throw new Error(err);
       });
   };
 
   useEffect(() => {
-    console.log("Componente montado");
     fetchFakeData();
   }, []);
 

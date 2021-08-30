@@ -1,0 +1,22 @@
+.navigation-menu {
+  height: 42px;
+  background: #234567;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  transition: transform 0.1s;
+}
+
+.link:hover {
+  transform: scale(1.15);
+}
+
+.selected-link {
+  text-decoration: underline;
+}

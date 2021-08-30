@@ -46,3 +46,12 @@
   font-size: 50px;
   color: purple;
 }
+
+.routes {
+  min-height: calc(100vh - 42px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
