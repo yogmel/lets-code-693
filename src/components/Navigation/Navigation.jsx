@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 
 function Navigation() {
@@ -48,6 +48,13 @@ function Navigation() {
       </NavLink>
       <NavLink className="link" activeClassName="selected-link" to="/pokedex">
         Pokedex
+      </NavLink>
+      <NavLink
+        className="link"
+        activeClassName="selected-link"
+        to="/lista-de-tarefas"
+      >
+        Lista de Tarefas
       </NavLink>
     </nav>
   );
