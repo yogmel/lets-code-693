@@ -56,6 +56,13 @@ function Navigation() {
       >
         Lista de Tarefas
       </NavLink>
+      <NavLink
+        className="link"
+        activeClassName="selected-link"
+        to="/giphy"
+      >
+        Giphy
+      </NavLink>
     </nav>
   );
 }

@@ -7,6 +7,7 @@ import ExercicioTres from "./ExercicioTres/ExercicioTres";
 import ExercicioUm from "./ExercicioUm/ExercicioUm";
 import ListaDeTarefas from "./ListaDeTarefas/ListaDeTarefas";
 import Pokedex from "./Pokedex/Pokedex";
+import GiphyGenerator from "./GiphyGenerator/GiphyGenerator";
 
 
 function Routes() {
@@ -41,6 +42,9 @@ function Routes() {
           </Route>
           <Route path="/lista-de-tarefas">
             <ListaDeTarefas />
+          </Route>
+          <Route path="/giphy">
+            <GiphyGenerator />
           </Route>
           <Route>
             <p>404 - Rota não encontrada</p>
