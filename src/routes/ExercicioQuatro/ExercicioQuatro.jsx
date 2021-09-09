@@ -19,8 +19,8 @@ const cidades = [
 function ExercicioQuatro() {
   return (
     <div className="exercio-quatro">
-      {cidades.map((cidade) => (
-        <Card key={cidade} cidade={cidade} />
+      {cidades.map((cidade, index) => (
+        <Card key={index} cidade={cidade} />
       ))}
     </div>
   );

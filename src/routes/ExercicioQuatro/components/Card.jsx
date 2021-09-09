@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 
 function Card(props) {
   const [dadosCidade, setDadosCidade] = useState({});
 
   const fetchData = () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.cidade}&appid=${process.env.REACT_APP_API_KEY}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.cidade}&appid=a8868b8ed509c59de081619871a3a53e&units=metric`;
 
     fetch(url)
       .then((data) => data.json())
@@ -54,5 +55,13 @@ function Card(props) {
     </div>
   );
 }
+
+Card.defaultProps = {
+  cidade: "fortaleza"
+};
+
+Card.propTypes = {
+  cidade: PropTypes.string
+};
 
 export default Card;
