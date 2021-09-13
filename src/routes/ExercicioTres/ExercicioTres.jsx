@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Button } from "../../components";
+import { abacate } from './utils/math';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -47,7 +48,7 @@ function ExercicioTres() {
   const gerarNumAleatorio = () => {
     if (min && max) {
       setErro("");
-      const num = Math.floor(Math.random() * (max + 1 - min)) + min;
+      const num = abacate(max, min);
       setNumAleatorio(num);
     } else {
       setErro("Insira um número!");

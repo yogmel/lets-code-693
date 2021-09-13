@@ -1,3 +1,4 @@
+import { useState, useContext } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { Navigation } from "./../components";
 import ExercicioCinco from "./ExercicioCinco/ExercicioCinco";
@@ -8,11 +9,17 @@ import ExercicioUm from "./ExercicioUm/ExercicioUm";
 import ListaDeTarefas from "./ListaDeTarefas/ListaDeTarefas";
 import Pokedex from "./Pokedex/Pokedex";
 import GiphyGenerator from "./GiphyGenerator/GiphyGenerator";
-
+import { ContadorContext } from "../context/ContadorContext";
 
 function Routes() {
+  const [contador, setContador] = useState('AAAAAAAAAA');
+  
+  const contadorDois = useContext(ContadorContext);
+
   return (
-    <>
+    <ContadorContext.Provider value={contador}>
+      <h2>context: {contadorDois}</h2>
+      <h2>state: {contador}</h2>
       <Navigation />
       <div className="routes">
         <Switch>
@@ -44,14 +51,14 @@ function Routes() {
             <ListaDeTarefas />
           </Route>
           <Route path="/giphy">
-            <GiphyGenerator />
+            <GiphyGenerator setContador={setContador} />
           </Route>
           <Route>
             <p>404 - Rota não encontrada</p>
           </Route>
         </Switch>
       </div>
-    </>
+    </ContadorContext.Provider>
   );
 }
 

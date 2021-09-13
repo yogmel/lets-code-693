@@ -2,10 +2,12 @@ import "./GiphyGenerator.css";
 import Button from "./../../components/Button/Button";
 import { useEffect, useState } from 'react';
 
-function GiphyGenerator() {
+function GiphyGenerator(props) {
   const [gif, setGif] = useState({});
   const [pesquisa, setPesquisa] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { setContador } = props;
 
   const fetchData = () => {
     setLoading(true);
@@ -60,6 +62,7 @@ function GiphyGenerator() {
         <input type="text" onChange={atualizarPesquisa} />
         <button>Gerar por palavra-chave</button>
       </form>
+      <button onClick={() => {console.log('asda'); setContador(2)}}>MUDAR CONTEXTO</button>
     </div>
   )
 }

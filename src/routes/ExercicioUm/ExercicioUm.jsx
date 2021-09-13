@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Button } from "../../components";
 import "./ExercicioUm.css";
 import { useParams } from "react-router-dom";
+import { ContadorContext } from './../../context/ContadorContext';
 
 function ExercicioUm() {
   const [citacao, setCitacao] = useState("");
   const [editandoCitacao, setEditingCitacao] = useState("");
   const [erro, setErro] = useState(false);
+
+  const contador = useContext(ContadorContext);
 
   const params = useParams();
   console.log("params", params);
@@ -51,6 +54,7 @@ function ExercicioUm() {
 
   return (
     <>
+      <h1>CONTADOR DO CONTEXT: {contador}</h1>
       <div>
         <blockquote>{citacao}</blockquote>
       </div>
